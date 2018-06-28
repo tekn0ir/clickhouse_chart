@@ -18,9 +18,6 @@ kubectl patch deployment tiller-deploy -p '{"spec": {"template": {"spec": {"auto
 
 # install chart
 helm upgrade --install clickhouse .
-
-# run tabix clickhouse GUI
-docker run -ti --rm -p 8080:80 -e USER='default' -e PASSWORD='password' -e CH_HOST='clickhouse.192.168.99.100.xip.io' spoonest/clickhouse-tabix-web-client
 ```
 
 ### Seed the database manually
@@ -53,7 +50,7 @@ helm install --name my-release .
 To uninstall/delete the `my-release` deployment:
 
 ```bash
-$ helm delete my-release
+helm delete my-release
 ```
 
 ## Configuration
